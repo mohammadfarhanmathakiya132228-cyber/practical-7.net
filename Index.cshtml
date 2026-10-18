@@ -1,0 +1,45 @@
+﻿@model IEnumerable<prct7.Models.Feedback>
+
+@{
+    ViewBag.Title = "View Feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Submitted Feedback</h1>
+
+@if (Model.Any())
+{
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Enrollment No</th>
+            <th>Student Name</th>
+            <th>Subject</th>
+            <th>Rating</th>
+            <th>Comments</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EnrollmentNo</td>
+                <td>@item.StudentName</td>
+                <td>@item.Subject</td>
+                <td>@item.Rating</td>
+                <td>@item.Comments</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No feedback submitted yet.</p>
+}
+
+<br />
+
+@Html.ActionLink("Give Feedback", "Create", "Feedback")
+
+<br />
+<br />
+
+@Html.ActionLink("Back to Home", "Index", "Home")

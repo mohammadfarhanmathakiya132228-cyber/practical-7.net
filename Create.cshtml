@@ -1,0 +1,14 @@
+﻿@model prct7.Models.Feedback
+
+@{
+    ViewBag.Title = "Student Feedback Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Student Feedback Form</h1>
+
+@Html.Partial("_FeedbackForm", Model)
+
+<br />
+
+@Html.ActionLink("Back to Home", "Index", "Home")
